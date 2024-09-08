@@ -1,6 +1,8 @@
-# provision-vagrant - easily create and provision new Ruby on Rails dev boxes
+# provision-vagrant
 
-The `provision-vagrant` gem works in conjunction with (Vagrant by HashiCorp)(https://www.vagrantup.com/) to let you easily spin up new Vagrant Virtual Machines--such as one pre-configured to include all of the necessary software to build a Ruby on Rails application.
+## Easily create and provision new Ruby on Rails Vagrant VM dev boxes
+
+The `provision-vagrant` gem works in conjunction with [Vagrant by HashiCorp](https://www.vagrantup.com/) to let you easily spin up new Vagrant Virtual Machines--such as one pre-configured to include all of the necessary software to build a Ruby on Rails application.
 
 ## Why?
 
@@ -30,7 +32,7 @@ Once you have these installed, you can proceed with installing the `provision-va
 gem install provision-vagrant
 ```
 
-This should create a `provision-vagrant` command that you should now be able to use. To test it:
+This should install a `provision-vagrant` command that you can now. To test it:
 
 ```
 provision-vagrant -v
@@ -65,11 +67,11 @@ By default, they setup a standard Ruby on Rails development environment with the
 - Ruby 3.3.5
 - NodeJS 22 & Yarn
 - PostgreSQL 16
-- Your id_rsa keys from ~/.ssh/ are copied over to the VM
+- Copies your id_rsa keys from ~/.ssh/ over to the VM
 - Github is configured with the same name/email from your host machine
-- PostgreSQL is configured to allow your `vagrant` user to create databases
+- PostgreSQL is configured to allow the `vagrant` user to create databases
 
-This setup is 100% modifiable. Simply update the generated `provision-vagrant` files in your ~/ directory. These are never touched by `provision-vagrant` once it has been initialized.
+This setup is 100% modifiable. Simply update the generated files in your ~/ directory. These are never touched by `provision-vagrant` once it has been initialized.
 
 ### Usage - Generating New VM Boxes
 
@@ -79,7 +81,7 @@ The `provision-vagrant` gem can now be used to generate boxes with:
 provision-vagrant new-box-name
 ```
 
-This creates some directories and copies over the Vagrantfile.template (interpolating variables within firs):
+This creates some directories and copies over the Vagrantfile.template after interpolating variables within it:
 
 ```
 Created directory: ~/new-box-name/
@@ -114,7 +116,7 @@ NOTE: you'll want to run this *inside* the VM after logging in via SSH.
 
 This step is necessary as vagrant provisioning cannot handle piping commands into new bash shells, etc--which is how `rbenv` is typically installed.
 
-At the end of the provisioning, version numbers for installed programs/libraries are displayed, and you will be prompted to accept the authenticity of the github.com host. This is just a test to see if your SSH connection to github.com is working and your ~/.ssh/id_rsa* keys have been copied over.
+At the end of the provisioning, version numbers for installed programs/libraries are displayed, and you will be prompted to accept the authenticity of the github.com host. This is just a test to see if your SSH connection to github.com is working and your ~/.ssh/id_rsa* keys have been copied over correctly.
 
 If you see something like this after accepting the authenticity request:
 
@@ -146,11 +148,9 @@ Hopefully it was smooth sailing. You should now be ready to rock & roll, with th
 
 In the event that you'd like to contribute to `provision-vagrant` -- we follow the "fork-and-pull" git workflow
 
-- Fork the repository to your own Github account
+- Fork the repository to your own GitHub account
 - Clone the project to your machine
 - Create a branch locally with a succinct but descriptive name
 - Commit changes to the branch
 - Push changes to your fork
-- Open a PR in our repository from your forked branch
-
-Thanks!
+- Open a PR in this repository from your forked branch
