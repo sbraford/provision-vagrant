@@ -10,7 +10,7 @@ end
 def main
   include ProvisionVagrant
 
-  ProvisionVagrant.help('New project name must be specified. Ex: provision-vagrant foo-app' ) if ARG.empty?
+  ProvisionVagrant.help('New project name must be specified. Ex: provision-vagrant foo-app' ) if ARGV.empty?
 
   project_name = ARGV[0]
   options[:project_name] = project_name

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name      = 'provision-vagrant'
-  s.version   = '1.0.4'
+  s.version   = '1.1.0'
   s.platform  = Gem::Platform::RUBY
   s.summary   = 'Opinionated vagrant box generator and provisioner for Ruby on Rails and beyond'
   s.description = "Easily spin up new Ubuntu/etc vagrant VM development boxes, provisioned to your exact specs"
