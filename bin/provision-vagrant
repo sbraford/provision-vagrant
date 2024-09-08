@@ -13,6 +13,7 @@ def main
   ProvisionVagrant.help('New project name must be specified. Ex: provision-vagrant foo-app' ) if ARGV.empty?
 
   project_name = ARGV[0]
+  options = ProvisionVagrant::Options.new.parse_options
   options[:project_name] = project_name
 
   generator = Generator.new(options)
