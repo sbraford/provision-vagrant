@@ -1,0 +1,3 @@
+configuration:
+  vm_box: bento/ubuntu-24.04
+  ruby_version: 3.3.5
