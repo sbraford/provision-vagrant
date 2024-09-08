@@ -8,13 +8,13 @@ The `provision-vagrant` gem works in conjunction with [Vagrant by HashiCorp](htt
 
 As a macOS user that targets deployment to Ubuntu machines in the cloud, having a local linux VM for development for each separate project has the following benefits:
 
-- Versioning: it is never a problem if different apps need different versions of ruby, rails, postgres, etc
-- Custom additions: what if you work on App A that needs redis v7, and App B that needs redis v6--this is never an issue with separate VMs
-- Compatibility with target deployment environment--this was more important prior to the advent of Docker, but
+- Versioning: it is never a problem if different apps need different versions of ruby, rails, postgres, etc.
+- Custom additions: what if you work on App A that needs redis v7, and App B that needs redis v6--this is never an issue with separate VMs.
+- Compatibility with target deployment environment--this was more important prior to the advent of Docker, but still comes in handy sometimes.
 
 *Why not just use Docker?*
 
-Docker is great. It is a good alternative for setting up all of the related services a Ruby on Rails app needs, likst PostgreSQL, redis, etc. But I would argue that it is _not_ great for actual development of Rails apps. You have to restart too often; there are file syncing issues; and the restart/rebuild loop can just be too slow at times.
+Docker is great. It is a good alternative for setting up all of the related services a Ruby on Rails app needs, like PostgreSQL, redis, etc. But I would argue that it is _not_ great for actual development of Rails apps. You have to restart too often; there are file syncing issues; and the restart/rebuild loop can just be too slow at times.
 
 ## Installation
 
