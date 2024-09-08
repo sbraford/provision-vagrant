@@ -6,7 +6,7 @@ module ProvisionVagrant
   VAGRANTFILE_TARGET_NAME = "Vagrantfile"
 
   def self.version
-    "1.0.1"
+    "1.0.4"
   end
 
   def self.write_string_to_File(string, file_path)

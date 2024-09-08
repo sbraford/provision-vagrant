@@ -4,20 +4,17 @@ require_relative '../lib/provision_vagrant'
 
 # Require all Ruby files in 'lib/'
 Dir[File.join(__dir__, '..', 'lib', '*.rb')].each do |file|
-  require file unless file.end_with?('porvision-vagrant')
+  require file unless file.end_with?('provision-vagrant')
 end
 
 def main
   include ProvisionVagrant
 
-  options_klass_obj = ProvisionVagrant::Options.new
-  options = options_klass_obj.parse_options
-  options_klass_obj.help 'New project name must be specified. Ex: provision-vagrant foo-app' if ARGV.empty?
+  ProvisionVagrant.help('New project name must be specified. Ex: provision-vagrant foo-app' ) if ARG.empty?
 
   project_name = ARGV[0]
   options[:project_name] = project_name
 
-  puts "\n\n options in main bin app: #{options.inspect}\n\n"
   generator = Generator.new(options)
   generator.generate
 end

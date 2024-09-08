@@ -64,8 +64,12 @@ module ProvisionVagrant
 
     attr_accessor :opts
 
+    def gem_template_dir
+      @_gem_dir ||= File.join(File.dirname(__FILE__), "templates")
+    end
+
     def source_vagrantfile_path
-      @_source_vagrantfile_path ||= File.join(Dir.pwd, "..", VAGRANTFILE_NAME)
+      @_source_vagrantfile_path ||= File.join(gem_template_dir, VAGRANTFILE_NAME)
     end
 
     def target_vagrantfile_path
@@ -73,7 +77,7 @@ module ProvisionVagrant
     end
 
     def source_post_hook_path
-      @_source_post_hook_path ||= File.join(Dir.pwd, "..", POST_HOOK_FILE_NAME)
+      @_source_post_hook_path ||= File.join(gem_template_dir, POST_HOOK_FILE_NAME)
     end
 
     def target_post_hook_path
@@ -81,7 +85,7 @@ module ProvisionVagrant
     end
 
     def source_provision_vagrant_config_path
-      @_source_provision_vagrant_config_path ||= File.join(Dir.pwd, "..", PROVISION_VAGRANT_CONFIG_FILE_NAME)
+      @_source_provision_vagrant_config_path ||= File.join(gem_template_dir, PROVISION_VAGRANT_CONFIG_FILE_NAME)
     end
 
     def target_provision_vagrant_config_path
